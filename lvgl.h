@@ -99,6 +99,7 @@ extern "C" {
 #include "src/others/translation/lv_translation.h"
 #include "src/others/xml/lv_xml.h"
 #include "src/others/test/lv_test.h"
+#include "src/others/remote_ctrl/lv_remote_ctrl.h"
 
 #include "src/libs/barcode/lv_barcode.h"
 #include "src/libs/bin_decoder/lv_bin_decoder.h"

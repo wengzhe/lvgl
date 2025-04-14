@@ -1179,6 +1179,9 @@
 /*1: Enable color filter style*/
 #define LV_USE_COLOR_FILTER     0
 
+/*1: Enable remote control*/
+#define LV_USE_REMOTE_CTRL 0
+
 /*==================
  * DEVICES
  *==================*/
@@ -1237,6 +1240,9 @@
     #define LV_NUTTX_DEFAULT_DRAW_BUF_USE_INDEPENDENT_IMAGE_HEAP    0
 
     #define LV_USE_NUTTX_LIBUV    0
+    #if LV_USE_NUTTX_LIBUV && LV_USE_REMOTE_CTRL
+        #define LV_NUTTX_CONTROL_PIPE_NAME "/tmp/lvgl-control"
+    #endif
 
     /** Use Nuttx custom init API to open window and handle touchscreen */
     #define LV_USE_NUTTX_CUSTOM_INIT    0

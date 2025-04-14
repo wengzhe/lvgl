@@ -1741,6 +1741,10 @@ menu "LVGL configuration"
 		config LVGL_VERSION_PATCH
 			int
 			default 0 # LVGL_VERSION_PATCH
+
+		config LV_USE_REMOTE_CTRL
+			bool "Enable remote control"
+			default n
 	endmenu
 
 	menu "Devices"
@@ -1979,6 +1983,12 @@ menu "LVGL configuration"
 			bool "Use uv loop to replace default timer loop and other fb/indev timers"
 			depends on LV_USE_NUTTX
 			default n
+
+		config LV_NUTTX_CONTROL_PIPE_NAME
+			depends on LV_USE_NUTTX_LIBUV
+			depends on LV_USE_REMOTE_CTRL
+			string "NuttX control pipe name"
+			default "/tmp/lvgl-control"
 
 		config LV_USE_NUTTX_CUSTOM_INIT
 			bool "Use Custom Nuttx init API to open window and handle touchscreen"
